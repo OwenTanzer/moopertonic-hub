@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A home for Moopertonic web tools.">
+    <title>Moopertonic</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #0b1020;
+        color: #eff3ff;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        padding: 2rem;
+        background: radial-gradient(circle at top, #202c56 0, #0b1020 55%);
+      }
+
+      main { width: min(100%, 56rem); }
+
+      h1 { margin: 0; font-size: clamp(2.5rem, 7vw, 4.75rem); letter-spacing: -0.06em; }
+
+      .intro { margin: 0.75rem 0 2.5rem; color: #b9c3e2; font-size: 1.125rem; }
+
+      .tools {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+        gap: 1rem;
+      }
+
+      a {
+        min-height: 11rem;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border: 1px solid #33436f;
+        border-radius: 1.25rem;
+        background: rgb(18 27 54 / 85%);
+        color: inherit;
+        text-decoration: none;
+        transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+      }
+
+      a:hover, a:focus-visible {
+        transform: translateY(-4px);
+        border-color: #85a6ff;
+        background: #1c2a55;
+      }
+
+      .icon { font-size: 2.4rem; line-height: 1; }
+      strong { font-size: 1.3rem; }
+      small { color: #b9c3e2; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Moopertonic</h1>
+      <p class="intro">A home for the tools we make.</p>
+      <section class="tools" aria-label="Web tools">
+        <a href="https://sanskrit.moopertonic.net">
+          <span class="icon" aria-hidden="true">ॐ</span>
+          <span><strong>Sanskrit</strong><br><small>Explore Sanskrit</small></span>
+        </a>
+        <a href="https://oil.moopertonic.net">
+          <span class="icon" aria-hidden="true">🛢️</span>
+          <span><strong>Oil</strong><br><small>Follow oil markets</small></span>
+        </a>
+        <a href="https://options.moopertonic.net">
+          <span class="icon" aria-hidden="true">📈</span>
+          <span><strong>Options</strong><br><small>Explore options data</small></span>
+        </a>
+        <a href="https://vidproc.moopertonic.net">
+          <span class="icon" aria-hidden="true">🎬</span>
+          <span><strong>VidProc</strong><br><small>Process video</small></span>
+        </a>
+      </section>
+    </main>
+  </body>
+</html>
