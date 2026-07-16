@@ -26,6 +26,16 @@
 
       main { width: min(100%, 56rem); }
 
+      .masthead { display: flex; align-items: center; gap: 1rem; }
+
+      .brand-icon {
+        width: clamp(3.5rem, 9vw, 5rem);
+        aspect-ratio: 1;
+        border: 2px solid #85a6ff;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
       h1 { margin: 0; font-size: clamp(2.5rem, 7vw, 4.75rem); letter-spacing: -0.06em; }
 
       .intro { margin: 0.75rem 0 2.5rem; color: #b9c3e2; font-size: 1.125rem; }
@@ -56,30 +66,40 @@
         background: #1c2a55;
       }
 
-      .icon { font-size: 2.4rem; line-height: 1; }
+      .icon {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 0.9rem;
+        object-fit: cover;
+        background: #f4f7ff;
+      }
+
       strong { font-size: 1.3rem; }
       small { color: #b9c3e2; }
     </style>
   </head>
   <body>
     <main>
-      <h1>Moopertonic</h1>
+      <div class="masthead">
+        <img class="brand-icon" src="Icons/web/mooper.webp" alt="Moopertonic mascot">
+        <h1>Moopertonic</h1>
+      </div>
       <p class="intro">A home for the tools we make.</p>
       <section class="tools" aria-label="Web tools">
         <a href="https://sanskrit.moopertonic.net">
-          <span class="icon" aria-hidden="true">ॐ</span>
+          <img class="icon" src="Icons/web/sanskrit.webp" alt="">
           <span><strong>Sanskrit</strong><br><small>Explore Sanskrit</small></span>
         </a>
         <a href="https://oil.moopertonic.net">
-          <span class="icon" aria-hidden="true">🛢️</span>
+          <img class="icon" src="Icons/web/oil.webp" alt="">
           <span><strong>Oil</strong><br><small>Follow oil markets</small></span>
         </a>
         <a href="https://options.moopertonic.net">
-          <span class="icon" aria-hidden="true">📈</span>
+          <img class="icon" src="Icons/web/options.webp" alt="">
           <span><strong>Options</strong><br><small>Explore options data</small></span>
         </a>
         <a href="https://vidproc.moopertonic.net">
-          <span class="icon" aria-hidden="true">🎬</span>
+          <img class="icon" src="Icons/web/vidproc.webp" alt="">
           <span><strong>VidProc</strong><br><small>Process video</small></span>
         </a>
       </section>
