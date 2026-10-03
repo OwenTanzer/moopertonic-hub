@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gestalten Visions</title>
+<meta name="description" content="Gestalten Visions: channels and socials.">
+<meta property="og:title" content="Gestalten Visions">
+<meta property="og:description" content="Channels and socials.">
+<meta property="og:image" content="logo.png">
+<link rel="icon" href="logo.png">
+<style>
+  :root {
+    --bg: #0d0c10;
+    --fg: #ece8f2;
+    --muted: #9a93a8;
+    --card: #1a1820;
+    --card-hover: #26232f;
+    --border: #2f2b3a;
+    --accent: #b48cff;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f4f9;
+      --fg: #18161d;
+      --muted: #5e5869;
+      --card: #ffffff;
+      --card-hover: #efeaf7;
+      --border: #ddd7e6;
+      --accent: #6b3fc4;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    display: flex;
+    justify-content: center;
+  }
+  main {
+    width: 100%;
+    max-width: 480px;
+    padding: 48px 16px 32px;
+    text-align: center;
+  }
+  .logo {
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border);
+  }
+  h1 { font-size: 1.5rem; margin: 16px 0 32px; }
+  ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  a.link {
+    display: block;
+    padding: 16px;
+    border-radius: 12px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--fg);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background .15s, border-color .15s;
+  }
+  a.link:hover, a.link:focus-visible {
+    background: var(--card-hover);
+    border-color: var(--accent);
+    outline: none;
+  }
+  a.link small { display: block; font-weight: 400; color: var(--muted); }
+  footer { margin-top: 40px; color: var(--muted); font-size: .8rem; }
+</style>
+</head>
+<body>
+<main>
+  <img class="logo" src="logo.png" alt="Gestalten Visions logo">
+  <h1>Gestalten Visions</h1>
+  <ul id="links"></ul>
+  <footer>© Gestalten Visions</footer>
+</main>
+<script>
+  // Edit this list to add, remove or reorder links. Entries with an empty
+  // url are hidden, so a platform can be listed before its channel exists.
+  const LINKS = [
+    { label: "YouTube", note: "", url: "https://www.youtube.com/@gestaltenvisions" },
+    { label: "TikTok", note: "", url: "https://www.tiktok.com/@gestaltenvisions" },
+    { label: "Instagram", note: "", url: "https://www.instagram.com/gestaltenvisions/" },
+    { label: "X", note: "", url: "https://x.com/gestaltnvisions" },
+    { label: "Bluesky", note: "", url: "" },
+    { label: "Patreon", note: "Support the channel", url: "" },
+    { label: "Email", note: "Business inquiries", url: "" },
+  ];
+
+  const list = document.getElementById("links");
+  for (const { label, note, url } of LINKS) {
+    if (!url) continue;
+    const a = document.createElement("a");
+    a.className = "link";
+    a.href = url;
+    if (!url.startsWith("mailto:")) {
+      a.target = "_blank";
+      a.rel = "noopener";
+    }
+    a.textContent = label;
+    if (note) {
+      const small = document.createElement("small");
+      small.textContent = note;
+      a.append(small);
+    }
+    const li = document.createElement("li");
+    li.append(a);
+    list.append(li);
+  }
+</script>
+</body>
+</html>
